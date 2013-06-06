@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='caldwellpy',
-      version='1.3.2',
+      version='1.3.4',
       description='Python Utilities Collection',
       author='Matt Caldwell',
       author_email='matt.caldwell@gmail.com',
