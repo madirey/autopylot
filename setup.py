@@ -3,10 +3,10 @@
 from distutils.core import setup
 
 setup(name='caldwellpy',
-      version='1.3.4',
+      version='1.3.5',
       description='Python Utilities Collection',
       author='Matt Caldwell',
       author_email='matt.caldwell@gmail.com',
       url='https://github.com/mattcaldwell/pyutil',
-      packages=['pyutil', 'pyutil.django']
+      packages=['pyutil', 'pyutil.django', 'pyutil.django.templatetags']
 )
