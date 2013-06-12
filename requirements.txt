@@ -1,5 +1,5 @@
 Django==1.5.1
-decorator==3.4.0
+contextdecorator==0.10.0
 mock==1.0.1
 requests==1.2.3
 wsgiref==0.1.2
