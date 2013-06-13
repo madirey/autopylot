@@ -23,8 +23,11 @@ class prime_cache(ContextDecorator):
                 resp = requests.get(self.data_source, timeout=self.timeout)
 
                 if resp.status_code == requests.codes.ok:
-                    data = json.loads(resp.text)
-                    cache.set(self.cache_key, data, self.expire)
+                    try:
+                        data = json.loads(resp.text)
+                        cache.set(self.cache_key, data, self.expire)
+                    except Exception, e:
+                        logger.error('Error initializing cache: %s' % e)
                 else:
                     logger.error('connection failed for url[%s] code[%s] msg[%s]' % (
                         self.data_source, resp.status_code, resp.text))
