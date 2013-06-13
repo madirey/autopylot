@@ -1,4 +1,4 @@
-Django==1.5.1
+Django==1.4.5
 contextdecorator==0.10.0
 mock==1.0.1
 requests==1.2.3
