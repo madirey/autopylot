@@ -11,7 +11,9 @@ setup(name='caldwellpy',
       packages=['pyutil', 'pyutil.django', 'pyutil.django.templatetags'],
       install_requires=[
           'Django==1.4.5',
+          'coverage==3.6',
           'mock==1.0.1',
+          'nose==1.3.0',
           'requests==1.2.3',
           'wsgiref==0.1.2',
       ]
