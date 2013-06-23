@@ -8,7 +8,8 @@ import requests
 logger = logging.getLogger('caldwellpy')
 
 @contextmanager
-def get_cached(cache_key, data_source, default=None, expire=60*60*24, timeout=10.0):
+def get_cached(cache_key, data_source, default=None, expire=60*60*24,
+               timeout=10.0):
     data = cache.get(cache_key)
     if not data:
         try:
@@ -21,7 +22,8 @@ def get_cached(cache_key, data_source, default=None, expire=60*60*24, timeout=10
                 except Exception, e:
                     logger.error('Error initializing cache: %s' % e)
             else:
-                logger.error('connection failed for url[%s] code[%s] msg[%s]' % (
+                logger.error(
+                    'connection failed for url[%s] code[%s] msg[%s]' % (
                     data_source, resp.status_code, resp.text))
 
         except Timeout:
