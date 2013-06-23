@@ -90,6 +90,13 @@ class TestDjango(TestCase):
                                             as parsed_json:
                 self.assertEqual([], parsed_json)
 
+    def test_get_cached_timeout(self):
+        with contextmanagers.get_cached('test_pyutil',
+                                        'http://localhost/notreal/fake',
+                                        timeout=0.00001)\
+                                        as parsed_json:
+            self.assertEqual(None, parsed_json)
+
     def test_get_key_found(self):
         self.assertEqual(2, pyutil.getkey({1:2}, 1))
 
