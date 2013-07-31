@@ -14,6 +14,7 @@ settings.configure(
 )
 
 from contextlib import contextmanager
+from datetime import datetime
 from django.core.cache import cache
 from django.test import TestCase
 from mock import patch
@@ -105,3 +106,7 @@ class TestDjango(TestCase):
 
     def test_split(self):
         self.assertEqual(['1','2','3'], pyutil.split('1,2,3', ','))
+
+    def test_todatetime(self):
+        datestr = 'Sun, 30 Jun 2013 07:27:13 GMT'
+        self.assertIsInstance(pyutil.todatetime(datestr), datetime)

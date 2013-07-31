@@ -18,6 +18,22 @@ class TestPyUtil(unittest.TestCase):
         self.assertEqual(4, Wizard.RINCEWIND)
         self.assertEqual(5, Wizard.RAND_ALTHOR)
 
+    def test_ignored_default(self):
+        d = {}
+        with pyutil.ignored():
+            d[1]
+
+    def test_ignored_keyerror(self):
+        d = {}
+        with pyutil.ignored(KeyError):
+            d[1]
+
+    def test_ignored_wrong_exception(self):
+        def _raises_exc():
+            d = {}
+            with pyutil.ignored(IndexError):
+                d[1]
+        self.assertRaises(KeyError, _raises_exc)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
