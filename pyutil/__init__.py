@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 from .enum import *
+import urlparse
 
 @contextmanager
 def ignored(*exceptions):
@@ -9,3 +10,8 @@ def ignored(*exceptions):
         yield
     except exceptions:
         pass
+
+def formaturl(url):
+    parsed = list(urlparse.urlparse(url))
+    parsed[2] = parsed[2].replace('//', '/')
+    return urlparse.urlunparse(parsed)

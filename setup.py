@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='caldwellpy',
-      version='1.6.2',
+      version='1.6.3',
       description='Python Utilities Collection',
       author='Matt Caldwell',
       author_email='matt.caldwell@gmail.com',
@@ -14,7 +14,7 @@ setup(name='caldwellpy',
           'coverage==3.6',
           'mock==1.0.1',
           'nose==1.3.0',
-          'requests==1.2.3',
+          'requests',
           'wsgiref==0.1.2',
       ]
 )
