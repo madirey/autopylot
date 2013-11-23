@@ -36,3 +36,4 @@ nosetests.xml
 .pydevproject
 .ropeproject
 test_pyutil
+test_autopylot

@@ -1,7 +1,7 @@
-import pyutil
+import autopylot
 import unittest
 
-class TestPyUtil(unittest.TestCase):
+class Testautopylot(unittest.TestCase):
 
     def setUp(self):
         pass
@@ -10,7 +10,7 @@ class TestPyUtil(unittest.TestCase):
         pass
 
     def test_enum(self):
-        Wizard = pyutil.enum(MERLIN=1, GANDALF=2, SEVERUS_SNAPE=3, RINCEWIND=4, RAND_ALTHOR=5)
+        Wizard = autopylot.enum(MERLIN=1, GANDALF=2, SEVERUS_SNAPE=3, RINCEWIND=4, RAND_ALTHOR=5)
         self.assertIsInstance(Wizard, type)
         self.assertEqual(1, Wizard.MERLIN)
         self.assertEqual(2, Wizard.GANDALF)
@@ -20,18 +20,18 @@ class TestPyUtil(unittest.TestCase):
 
     def test_ignored_default(self):
         d = {}
-        with pyutil.ignored():
+        with autopylot.ignored():
             d[1]
 
     def test_ignored_keyerror(self):
         d = {}
-        with pyutil.ignored(KeyError):
+        with autopylot.ignored(KeyError):
             d[1]
 
     def test_ignored_wrong_exception(self):
         def _raises_exc():
             d = {}
-            with pyutil.ignored(IndexError):
+            with autopylot.ignored(IndexError):
                 d[1]
         self.assertRaises(KeyError, _raises_exc)
 

@@ -2,13 +2,13 @@
 
 from distutils.core import setup
 
-setup(name='caldwellpy',
-      version='1.6.3',
-      description='Python Utilities Collection',
+setup(name='autopylot',
+      version='1.9.5',
+      description='Put your Python on autopylot.',
       author='Matt Caldwell',
       author_email='matt.caldwell@gmail.com',
-      url='https://github.com/mattcaldwell/pyutil',
-      packages=['pyutil', 'pyutil.django', 'pyutil.django.templatetags'],
+      url='https://github.com/mattcaldwell/autopYlot',
+      packages=['autopylot', 'autopylot.django', 'autopylot.django.templatetags'],
       install_requires=[
           'Django==1.4.5',
           'coverage==3.6',

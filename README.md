@@ -1,4 +1,4 @@
-pyutil
-======
+autopylot
+=========
 
-A collection of useful Python utilities.
+Put your Python on autopylot.
