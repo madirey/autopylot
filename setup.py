@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='autopylot',
-      version='1.9.5',
+      version='1.9.6',
       description='Put your Python on autopylot.',
       author='Matt Caldwell',
       author_email='matt.caldwell@gmail.com',
